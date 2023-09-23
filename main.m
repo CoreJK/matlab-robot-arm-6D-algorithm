@@ -19,13 +19,13 @@ T56 = fun_dirsolu_mdh(L6(1), L6(2), L6(3), L6(4));
 T06 = T01 * T12 * T23 * T34 * T45 * T56;
 
 % % 求解变换矩阵，T1赋值，round_matrix化简打印。
-T1 = fun_round_matrix(subs(T06, {theta1, theta2, theta3, theta4, theta5, theta6}, {1.2, 0.3, 1, 0.2, 1.5, 0.8}));
+% T1 = fun_round_matrix(subs(T06, {theta1, theta2, theta3, theta4, theta5, theta6}, {1.2, 0.3, 1, 0.2, 1.5, 0.8}));
 T2 = fun_round_matrix(subs(T06, {theta1, theta2, theta3, theta4, theta5, theta6}, {0, 0, 0, 0, 0, 0}));
 
 % % 求出八组逆解。
-[S, Q] = fun_revsolu_Kuka6D(T1);
+[S, Q] = fun_revsolu_Kuka6D(T2);
 
 % % % % % 求解工作空间，R赋值，dirsolu_6D_workspace.m绘制工作空间。
-R = [-pi pi; - (13/18) * pi (2/18) * pi; (-10/18) * pi (14/18) * pi; -pi pi; -pi pi; -pi pi];
+% R = [-pi pi; - (13/18) * pi (2/18) * pi; (-10/18) * pi (14/18) * pi; -pi pi; -pi pi; -pi pi];
 % dirsolu_6D_workspace;
 % scatter3(qx, qy, qz)
