@@ -30,13 +30,13 @@ function [J] = MODikine(a)
     nz = a(3, 1); oz = a(3, 2); az = a(3, 3); pz = a(3, 4);
 
     % 求解关节角1
-    theta1_1 = atan2(py, px) - atan2(d2, sqrt(px ^ 2 + py ^ 2 - d2 ^ 2));
-    theta1_2 = atan2(py, px) - atan2(d2, -sqrt(px ^ 2 + py ^ 2 - d2 ^ 2));
+    theta1_1 = atan2(py, px) - atan2(d2, sqrt(abs(px ^ 2 + py ^ 2 - d2 ^ 2)));
+    theta1_2 = atan2(py, px) - atan2(d2, -sqrt(abs(px ^ 2 + py ^ 2 - d2 ^ 2)));
 
     % 求解关节角3
     m3_1 = (px ^ 2 + py ^ 2 + pz ^ 2 - a2 ^ 2 - a3 ^ 2 - d2 ^ 2 - d4 ^ 2) / (2 * a2);
-    theta3_1 = atan2(a3, d4) - atan2(m3_1, sqrt(a3 ^ 2 + d4 ^ 2 - m3_1 ^ 2));
-    theta3_2 = atan2(a3, d4) - atan2(m3_1, -sqrt(a3 ^ 2 + d4 ^ 2 - m3_1 ^ 2));
+    theta3_1 = atan2(a3, d4) - atan2(m3_1, sqrt(abs(a3 ^ 2 + d4 ^ 2 - m3_1 ^ 2)));
+    theta3_2 = atan2(a3, d4) - atan2(m3_1, -sqrt(abs(a3 ^ 2 + d4 ^ 2 - m3_1 ^ 2)));
 
     % 求解关节角2
     ms2_1 =- ((a3 + a2 * cos(theta3_1)) * pz) + (cos(theta1_1) * px + sin(theta1_1) * py) * (a2 * sin(theta3_1) - d4);
