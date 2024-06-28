@@ -1,12 +1,12 @@
 clear;clc;
-theta1min = -100; theta1max = 100;
-theta2min = -60; theta2max = 90;
-theta3min = -180; theta3max = 50;
-theta4min = -180; theta4max = 180;
-theta5min = -180; theta5max = 40;
-theta6min = -180; theta6max = 180;
+theta1min = -136; theta1max = 136;
+theta2min = -85; theta2max = 97;
+theta3min = -91; theta3max = 47;
+theta4min = -141; theta4max = 182;
+theta5min = -220; theta5max = 30;
+theta6min = -360; theta6max = 360;
 %
-n = 30000;
+n = 3000;
 x = zeros; y = zeros; z = zeros;
 
 for i = 1:n
