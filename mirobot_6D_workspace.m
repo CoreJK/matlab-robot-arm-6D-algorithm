@@ -6,7 +6,7 @@ theta4min = -141; theta4max = 182;
 theta5min = -220; theta5max = 30;
 theta6min = -360; theta6max = 360;
 %
-n = 3000;
+n = 10000;
 x = zeros; y = zeros; z = zeros;
 
 for i = 1:n
